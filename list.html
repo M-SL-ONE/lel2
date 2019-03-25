@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>采购订单</title>
+	<script>
+		// rem适配
+		(function(){
+			var html = document.documentElement;
+			var hWidth = html.getBoundingClientRect().width;
+			html.style.fontSize = hWidth/15 + 'px';
+		})()
+	</script>
+	<link rel="shortcut icon" href="#" />
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/list.css">
+	<link rel="stylesheet" href="css/goodsList.css">
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/name.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript" src="js/cg.js"></script>
+	<script type="text/javascript" src="js/list.js"></script>
+</head>
+<body>
+	<div class="header">
+		<h1><span class="fa fa-chevron-left return"></span>采购订单</h1>
+		<p>
+			<span class="unreviewed" id="new">新建</span>
+			<span class="save">保存</span>
+			<span class="sh">审核</span>
+			<span class="reviewed">删单</span>
+			<span class="more" on="true"><i class="fa fa-ellipsis-v"></i></span>
+		</p>
+		<div class="moreList">
+			<ul>
+				<li>打印</li>
+			</ul>
+		</div>
+	</div>
+	<div class="list-edit">
+		<form action="" autocomplete="off">
+			<div>
+				<p>
+					<label for="">单据编号</label><input type="text" value="" disabled="disabled" id="item_no">
+				</p>
+				<p>
+					<label for="">业务日期</label><input type="date" class="xqrq" disabled="disabled"><span class="fa fa-chevron-right"></span>
+				</p>
+				<p style="width: 100%;" class="clearfix">
+					<strong style="display: inline-block; width: 6rem; height: 1.5rem; float: left; position: relative;">
+						<label for="">收货仓库</label>
+						<select style="width: 4rem;" id="ck">
+
+						</select>
+					</strong>
+					<strong style="display: inline-block; width: 6rem; height: 1.5rem; float: left; margin-left: 0.5rem; position: relative;">
+						<label for="">审核状态</label>
+						<input type="text" placeholder="" class="nowState" disabled="disabled">
+					</strong>
+				</p>
+				<p>
+					<label for="">供应商</label>
+					<input type="text" value="" class="gysIpt" no="">
+					<!-- <span class="fa fa-chevron-right gys"></span> -->
+				</p>
+				<p>
+					<label for="">备注</label><input type="text" placeholder="备注"><span></span>
+				</p>
+				<p>
+					<label for="">条码扫描</label><input type="number" placeholder="请输入条码" class="tm"><span class="fa fa-search searchbtn"></span>
+				</p>				
+			</div>
+			<a href="javascript:;" class="fold"><i class="fa fa-angle-double-down"></i></a>
+		</form>
+	</div>
+	<div class="list-info" id="list-info">
+
+	</div>
+	<div class="footer clearfix">
+		<div class="totalNum">总数量：<span>0</span></div>
+		<div class="totalMoney">总金额：<span>0</span></div>
+		<div class="add"><a href="javascript:;"><span class="fa fa-plus-square-o"></span>添加商品</a></div>
+	</div>
+	<div class="list-btn">
+		<span class="qxGoods" on="true">全选</span>
+		<span class="qbxGoods" on="true">全不选</span>
+		<span class="deleteGoods">删除</span>
+	</div>	
+	<!-- 日期容器 -->
+	<div id="datePlugin"></div>	
+
+	<div class="wrap">
+		<div class="header">
+			<h1><span class="fa fa-chevron-left first"></span>选择商品</h1>
+			<p><span class="qxw">全选</span><span class="qbxw">全不选</span><span class="showImg">显示图片</span><!-- <span>新增</span> --><!-- <span class="top">上一级</span> --><span class="determain">确定</span></p>
+		</div>
+		<div class="add-search">
+			<div class="add-type">
+				<div>类别</div>
+				<div>供应商</div>
+				<div>品牌</div>
+			</div>
+			<input type="text" placeholder="条码 / 名称" id="search" on="true">
+			<button id="searchGoods" class="fa fa-search"></button>
+		</div>
+		<div class="goodsList">
+			<div class="goodsRight" id="sp">
+
+			</div>		
+			<div class="goodsLeft">
+				<ul id="lb">
+
+				</ul>
+			</div>
+
+			<span class="top" on="true" style="display: none;">上级</span>
+			<span class="fa fa-chevron-right switchGoods" on="true"></span>
+		</div>	
+	</div>
+	<div class="goods-info add-good">
+		<div class="header">
+			<h1><span class="fa fa-chevron-left topClass"></span>添加商品</h1>
+			<!-- <p><span>取消</span></p> -->
+		</div>
+		<div action="" class="goods-form" id="tk">
+
+		</div>
+		<div class="goods-btn">
+			<div class="preGoods fa fa-chevron-left"></div>
+			<div class="nextGoods fa fa-chevron-right"></div>
+		</div>		
+		<div class="addGoods">添加</div>
+	</div>
+
+
+	<div class="goods-info update-good">
+		<div class="header">
+			<h1><span class="fa fa-chevron-left first"></span>修改商品</h1>
+			<!-- <p><span>收藏</span><span>删除</span></p> -->
+		</div>
+		<div action="" class="goods-form" id="xg">
+
+		</div>
+		<div class="saveGoods">保存</div>
+	</div>	
+	<div class="gysList">
+		<div class="header">
+			<h1 class="clearfix"><span class="fa fa-chevron-left return"></span>供应商查询<span class="" style="position: absolute; right: 0; font-size: 0.5rem; margin-right: 20px;">扫码</span></h1>
+		</div>
+		<div class="search-gys">
+			<input type="text" placeholder="请输入名称/编号" id="searchGys">
+			<button class="fa fa-search searchGysBtn"></button>
+		</div>
+		<div class="serach-list" id="gys">
+
+		</div>
+	</div>
+	<script src="js/drag.js"></script>
+</body>
+</html>

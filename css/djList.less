@@ -1,0 +1,288 @@
+@rem: 50px;
+@primary-color: #00abf1;
+.header{
+	width: 100%;
+	background-color: @primary-color;
+	height: 2rem;
+	color: #fff;
+	line-height: 2rem;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	h1{
+		font-size: 0.7rem;
+		font-weight: normal;
+		margin-left: 0.5rem;
+		float: left;
+		span{
+			margin-right: 0.3rem;
+		}
+	}
+	p{
+		float: right;
+		margin-right: 0.5rem;
+		line-height: 2rem;
+		span{
+			float: left;
+			display: inline-block;
+			font-size: 0.6rem;
+			padding-left: 0.2rem;
+			padding-right: 0.2rem;
+			text-align: center;
+			a{
+				color: #fff;
+			}
+			// padding-right: 0.5rem;
+		}
+		.nowState{
+			i{
+				visibility:visible;
+			}
+		}
+		.more{
+			line-height: 2rem;
+		}
+	}
+}
+.djlist-edit{
+	width: 100%;
+	position: absolute;
+	top: 2rem;
+	form{
+		p{
+			width: 100%;
+			height: 1.5rem;
+			line-height: 1.5rem; 
+			position: relative;
+			background: #fafafa;
+			border-bottom: 1px solid #e8e8e8;
+			box-sizing: border-box;
+			label{
+				position: absolute;
+				left: 1rem;
+				top: 0;
+				font-size: 0.5rem;
+				width: 2.2rem;
+				// text-align: right;
+				text-align: justify;
+				color: #7c7c7c;				
+			}
+			label:after { content: " "; display: inline-block; width: 100%;}
+			input{
+				position: absolute;
+				left: 3.5rem;
+				top: 0;
+				width: 10rem;
+				height: 1.5rem;
+				line-height: 1.5rem;
+				background: none;
+				color: #000!important;
+				text-align: left;
+				font-size: 0.5rem;
+				text-indent: 1rem;
+
+			}
+			.tm{
+				width: 8rem;
+			}
+			select{
+				position: absolute;
+				left: 3.5rem;
+				top: 0;
+				width: 10.5rem;
+				height: 1.5rem;
+				line-height: 1.5rem;
+				background: none;
+				color: #000!important;
+				border: none;
+				font-size: 0.5rem;
+				text-indent: 2em;
+			}
+			span{
+				position: absolute;
+				right: 0rem;
+				width: 1rem;
+				line-height: 1.5rem;
+				float: right;
+				margin-right: 0.5rem;
+				font-size: 0.5rem;
+				color: #adadad;
+			}
+		}
+		.sh{
+			.allSh{
+				position:absolute;
+				left: 4.5rem;
+				width: 2rem;
+				i{
+					font-size: 0.2rem;
+					position: relative;
+					top: -0.3rem;
+					left: 0.2rem;
+					visibility: hidden;
+				}
+			}
+			.yiSh{
+				position:absolute;
+				left: 7rem;
+				width: 2rem;
+				i{
+					font-size: 0.2rem;
+					position: relative;
+					top: -0.3rem;
+					left: 0.2rem;
+					visibility: hidden;
+				}
+			}
+			.weiSh{
+				position:absolute;
+				left: 10rem;
+				width: 2rem;
+				i{
+					font-size: 0.2rem;
+					position: relative;
+					top: -0.3rem;
+					left: 0.2rem;
+					visibility: hidden;
+				}
+			}
+			.nowSh{
+				i{
+					visibility: visible;
+					color: red;
+				}
+			}
+		}
+		p:nth-child(2n){
+			background-color:#f5f5f5;
+		}
+		.fold{
+			display: inline-block;
+			width: 2rem;
+			height: 1.2rem;
+			margin-left: 6.5rem;
+			margin-right: 6.5rem;
+			// margin-top: -0.5rem;
+			text-align: center;
+			line-height: 1.2rem;
+			background-color: @primary-color;
+			color: #fff;
+			margin-bottom: 0.5rem;
+			font-size: 0.6rem;
+			border-bottom-left-radius: 0.2rem;
+			border-bottom-right-radius: 0.2rem;
+			i{
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				line-height: 1.2rem;
+				font-size: 0.8rem;
+			}
+		}
+
+	}	
+}
+.djtitle{
+	position: fixed;
+	top: 8rem;
+	width: 100%;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	background-color: @primary-color;
+	color: #fff;
+	font-size: 0.6rem;
+	text-indent: 1rem;
+	span{
+		// width: 2rem;
+		font-size: 0.5rem;
+		display: inline-block;
+		// width: 2rem;
+		float: right;
+		padding-left: 0;
+		text-align: center;
+		// margin-right: 0.5rem;
+	}
+	.cd{
+		margin-right: 0.5rem;
+	}
+}
+.djList{
+	width: 100%;
+	height: calc(100% - 9.5rem);
+	position: fixed;
+	top: 9.5rem;
+	overflow-y: scroll;
+
+	.dj{
+		width: 14rem;
+		padding: 0.2rem 0.5rem 0.2rem;
+		font-size: 0.5rem;
+		border-bottom: 1px solid #eaeeee;
+		background: #fff;
+		position: relative;
+		.djInfo{
+			width: 12rem;
+			float: left;
+			p{
+				text-indent: 0.5rem;
+				height: 1rem;
+				line-height: 1rem;
+				width: 100%;
+				color: #7c7c7c;
+				.state{
+					margin-left: 0.5rem;
+				}
+				.queue{
+					display: inline-block;
+					width: 1.2rem;
+					height: 0.8rem;
+					line-height: 0.8rem;
+					font-size: 0.4rem;
+					margin-right: 0.3rem;
+					background: @primary-color;
+					text-align: center;
+					text-indent: 0;
+					border-radius: 0.2rem;
+					color: #fff;
+				}
+			}
+			p:first-child{
+				color: #000;
+			}
+		}
+		.djCheck{
+			position: absolute;
+			top: 0.5rem;
+			right: 1rem;
+		}
+		.djDelete{
+			position: absolute;
+			top: 2rem;
+			right: 1rem;
+		}
+	}
+	.nowDj{
+		// background-color: #f7f9f9;
+    	border-bottom: 1px solid #eaeeee;
+    	.djCheck{
+    		color: @primary-color;
+    	}
+	}
+}
+.footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 1.5rem;
+	text-align: center;
+	background: @primary-color;
+	line-height: 1.5rem;
+	display: none;
+	p{
+		font-size: 0.5rem;
+		color: #fff;
+		i{
+			margin-right: 0.3rem;
+		}
+	}
+}

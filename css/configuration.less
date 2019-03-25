@@ -1,0 +1,415 @@
+@rem: 50px;
+@primary-color: #00abf1;
+#configuration{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+	background: #fff;
+}
+body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #fff;
+}
+.header{
+	background-color: @primary-color;
+	height: 2rem;
+	color: #fff;
+	line-height: 2rem;
+	h1{
+		font-size: 0.8rem;
+		font-weight: normal;
+		margin-left: 0.5rem;
+		float: left;
+		span{
+			margin-right: 0.3rem;
+		}
+	}
+	p{
+		float: right;
+		margin-right: 0.5rem;
+		line-height: 2rem;
+		span{
+			float: left;
+			display: inline-block;
+			font-size: 0.6rem;
+			padding-left: 0.5rem;
+			// padding-right: 0.5rem;
+		}
+	}
+}
+.config-list{
+	// height: calc(100% - 10rem);
+	// overflow-y: scroll;
+	// margin-top: 0.2rem;
+	.configWrap{
+		height: 100%;
+		overflow: hidden;
+		overflow-y: scroll;
+		.wrap{
+			width: 100%;
+			height: 2rem;
+			padding: 0.3rem 0;
+			line-height: 1rem;
+			font-size: 0.5rem;
+			// background: red;
+			border-bottom: 0.02rem solid #eee;
+			.serverInfo{
+				width: 13rem;
+				height: 2rem;
+				p{
+					text-indent: 0.5rem;
+					span{
+						color: #aaa;
+						i{
+							font-style:normal;
+							margin-left: 0.3rem;
+						}
+					}
+					.serverName{
+						color: #000;
+					}
+				}
+			}
+			.serverAction{
+				width: 1.5rem;
+				height: 2rem;
+				span{
+					display: block;
+					width: 1rem;
+					height: 1rem;
+					position: relative;
+					top: 0.5rem;
+					font-size: 0.6rem;
+					text-align: center;
+					line-height: 1rem;
+				}
+
+			}
+			&.target{
+				background: @primary-color;
+				color: #fff;
+				height: 2rem;
+				padding: 0.2rem 0;
+				.serverInfo{
+					p{
+						span{
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+	table{
+		width: 100%;
+		text-align: center;
+		thead{
+			tr{
+				height: 1.5rem;
+				line-height: 1.5rem;
+				td{
+					font-size: 0.5rem;
+					background-color: #f5f5f5;
+				}
+			}
+		}
+		tbody{
+			tr{
+				height: 4rem;
+				line-height: 2rem;
+				position: relative;
+				// border-bottom: 1px solid #e8e8e8;
+				td{
+					font-size: 0.5rem;
+				}
+				.serverName{
+					img{
+						width: 2rem;
+						height: 2rem;
+						margin-top: 0.5rem;
+					}
+				}
+				.serverSite{
+					font-size: 0.3rem;
+					line-height: 0.5rem;
+					text-align: left;
+					text-indent: 2em;
+					label{
+						display: inline-block;
+						width: 3rem;
+						text-align: right;
+					}
+				}
+				
+			}
+			.target{
+				background-color: @primary-color;
+				color: #fff;
+			}
+		}
+	}
+}
+// 二维码
+.configCode{
+	
+	width: 100%;
+	height: 5rem;
+	border-top: 1px solid #e8e8e8;
+	background: #fff;
+	// display: none;
+	opacity: 0;
+	#qrcode{
+		width: 4rem;
+		height: 4rem;
+		margin: 0.5rem auto 0.5rem;
+	}
+	img{
+		width: 4rem;
+		height: 4rem;
+	}
+	// p{
+	// 	color: #aaa;
+	// 	text-align: center;
+	// 	font-size: 0.5rem;
+	// 	line-height: 1.2rem;
+	// }
+}
+.config-target{
+	position: fixed;
+	bottom: 0;
+	width: 15rem;
+	// min-height: 5rem;
+	// background: #FFF;
+	margin: 0 auto 0;
+	// position: relative;
+	p{
+		width: 100%;
+		height: 1.5rem;
+		line-height: 1.5rem;
+		position: relative;
+		// position: absolute;
+		// bottom: 0;
+		// background: @primary-color;
+		color: #fff;
+		opacity: 0;
+		label{
+			position: absolute;
+			left: 0.5rem;
+			top: 0;
+			font-size: 0.5rem;
+			width: 2.5rem;
+			height: 1.5rem;
+			line-height: 1.5rem;
+			text-align: right;
+		}
+		input{
+			position: absolute;
+			left: 3.5rem;
+			top: 0;
+			width: 10.5rem;
+			height: 1.5rem;
+			line-height: 1.5rem;
+			border-radius: 0.5rem;
+			background: none;
+			color: #fff;
+		}	
+	}
+	.userList{
+		width: 100%;
+		min-height: 2.7rem;
+		max-height: calc(5rem + 16px);
+		border-top: 0.03rem solid #e8e8e8;
+		// margin-bottom: 1rem;
+		overflow-y: scroll;
+		// display: none;
+		visibility: hidden;
+		table{
+			width: 100%;
+			text-align: center;
+			thead{
+				tr{
+					height: 1.2rem;
+					line-height: 1.2rem;
+					td{
+						font-size: 0.5rem;
+						background-color: @primary-color;
+						color: #fff;
+					}
+					.userPhone{
+						width: 6rem;
+					}
+					.userBz{
+						width: 6rem;
+					}
+					.userXg{
+						width: 3rem;
+					}
+				}
+			}
+			tbody{
+				tr{
+					height: 1.5rem;
+					// line-height: 1.5rem;
+					border-bottom: 0.02rem solid #e8e8e8;
+					td{
+						font-size: 0.5rem;
+					}
+					&:last-child{
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+	.save{
+		width: 100%;
+		height: 1.5rem;
+		line-height: 1.5rem;
+		background: @primary-color;
+		color: #fff;
+	}	
+}
+.serverEdit{
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	form{
+		p{
+			width: 100%;
+			height: 1.4rem;
+			line-height: 1.4rem;
+			background: #fff;
+			margin-bottom: 0.2rem; 
+			border-bottom:0.02rem solid #ccc;
+			position: relative;
+
+			label{
+				position: absolute;
+				left: 0.5rem;
+				top: 0;
+				font-size: 0.5rem;
+				width: 2.5rem;
+				height: 1.4rem;
+				line-height: 1.4rem;
+				text-align: justify;
+				color: #aaa;
+				span{
+					display: inline-block;
+					width: 100%;
+				}
+			}
+			input{
+				position: absolute;
+				left: 4rem;
+				top: 0;
+				width: 8rem;
+				height: 1.4rem;
+				line-height: 1.4rem;
+				border-radius: 0.5rem;
+				background: none;
+				color: #111111;
+			}
+			select{
+				position: absolute;
+				left: 4rem;
+				top: 0;
+				width: 8rem;
+				height: 1.4rem;
+				line-height: 1.4rem;
+				border-radius: 0.5rem;
+				background: none;
+				color: #111111;
+				border: none;
+			}
+		}
+		.saveServer{
+			display: block;
+			width: 100%;
+			height: 1.5rem;
+			line-height: 1.5rem;
+			background: @primary-color;
+			color: #fff;
+			font-size: 0.6rem;
+			text-align: center;
+		}
+	}
+}
+.serverChange{
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	form{
+		p{
+			width: 100%;
+			height: 1.4rem;
+			line-height: 1.4rem;
+			background: #fff;
+			margin-bottom: 0.2rem; 
+			border-bottom:0.02rem solid #ccc;
+			position: relative;
+
+			label{
+				position: absolute;
+				left: 0.5rem;
+				top: 0;
+				font-size: 0.5rem;
+				width: 2.5rem;
+				height: 1.4rem;
+				line-height: 1.4rem;
+				text-align: justify;
+				color: #aaa;
+				span{
+					display: inline-block;
+					width: 100%;
+				}
+			}
+			input{
+				position: absolute;
+				left: 4rem;
+				top: 0;
+				width: 8rem;
+				height: 1.4rem;
+				line-height: 1.4rem;
+				border-radius: 0.5rem;
+				background: none;
+				color: #111111;
+			}
+			select{
+				position: absolute;
+				left: 4rem;
+				top: 0;
+				width: 8rem;
+				height: 1.4rem;
+				line-height: 1.4rem;
+				border-radius: 0.5rem;
+				background: none;
+				color: #111111;
+				border: none;
+			}
+		}
+		.changeServer{
+			display: block;
+			width: 100%;
+			height: 1.5rem;
+			line-height: 1.5rem;
+			background: @primary-color;
+			color: #fff;
+			font-size: 0.6rem;
+			text-align: center;
+		}
+	}
+}
+

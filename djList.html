@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>订单列表</title>
+	<script>
+		// rem适配
+		(function(){
+			var html = document.documentElement;
+			var hWidth = html.getBoundingClientRect().width;
+			html.style.fontSize = hWidth/15 + 'px';
+		})()
+	</script>
+	<link rel="shortcut icon" href="#" />
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/djList.css">
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/name.js"></script>
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript" src="js/djList.js"></script>
+	
+</head>
+<body>
+	<div class="header">
+		<h1><span class="fa fa-chevron-left return"></span>订单列表</h1>
+		<p><span class=""><a href="list.html" class="add">新增</a></span></p>
+	</div>
+	<div class="djlist-edit">
+		<form action="" autocomplete="off">
+			<div>
+				<p>
+					<label for="">单据编号</label><input type="text" value="" placeholder="请输入编号" id="djbh">
+				</p>
+				<p>
+					<label for="">开始日期</label><input type="date" class="start-date" ><span class="fa fa-chevron-right"></span>
+				</p>
+				<p>
+					<label for="">结束日期</label><input type="date" class="end-date" ><span class="fa fa-chevron-right"></span>
+				</p>
+				<p class="sh">
+					<label for="">审核状态</label>
+					<span class="allSh nowSh">全部<i class="fa fa-circle"></i></span>
+					<span class="weiSh">未审核<i class="fa fa-circle"></i></span>
+					<span class="yiSh">已审核<i class="fa fa-circle"></i></span>
+				</p>			
+			</div>
+		</form>
+	</div>
+	<div class="djtitle">
+		<p>单据列表<span class="cd">查单</span><span class="qbxdj" style="">全不选</span><span class="qxdj" style="">全选</span><span class="sddj">删单</span></p>
+	</div>
+	<div class="djList" id="djList">	
+
+	</div>
+	<!-- 日期容器 -->
+	<div id="datePlugin"></div>	
+</body>
+</html>

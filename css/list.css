@@ -1,0 +1,856 @@
+body {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.header {
+  width: 100%;
+  background-color: #00abf1;
+  height: 2rem;
+  color: #fff;
+  line-height: 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.header h1 {
+  font-size: 0.7rem;
+  font-weight: normal;
+  margin-left: 0.5rem;
+  float: left;
+}
+.header h1 span {
+  margin-right: 0.3rem;
+}
+.header p {
+  float: right;
+  margin-right: 0.5rem;
+  line-height: 2rem;
+}
+.header p span {
+  float: left;
+  display: inline-block;
+  font-size: 0.5rem;
+  padding-left: 0.5rem;
+  text-align: center;
+}
+.header p .more {
+  display: inline-block;
+}
+.header .moreList {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  width: 3rem;
+  height: auto;
+  background: #00abf1;
+  color: #fff;
+  font-size: 0.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+.list-edit {
+  width: 100%;
+  position: absolute;
+  top: 2rem;
+}
+.list-edit form p {
+  width: 100%;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  position: relative;
+  background: #fafafa;
+  border-bottom: 1px solid #e8e8e8;
+}
+.list-edit form p label {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  font-size: 0.5rem;
+  width: 2.2rem;
+  text-align: justify;
+  color: #7c7c7c;
+}
+.list-edit form p label:after {
+  content: " ";
+  display: inline-block;
+  width: 100%;
+}
+.list-edit form p input {
+  position: absolute;
+  left: 3.5rem;
+  top: 0;
+  width: 10rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  background: none;
+  color: #000!important;
+  text-align: left;
+  font-size: 0.5rem;
+  text-indent: 0.5rem;
+}
+.list-edit form p .tm {
+  width: 8rem;
+}
+.list-edit form p select {
+  position: absolute;
+  left: 3.5rem;
+  top: 0;
+  width: 10.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  background: none;
+  color: #000!important;
+  border: none;
+  font-size: 0.5rem;
+  text-indent: 1em;
+  background-color: #fafafa;
+}
+.list-edit form p strong {
+  font-weight: normal;
+}
+.list-edit form p span {
+  position: absolute;
+  right: 0rem;
+  width: 1rem;
+  line-height: 1.5rem;
+  float: right;
+  margin-right: 0.5rem;
+  font-size: 0.5rem;
+  color: #adadad;
+}
+.list-edit form p:nth-child(2n) {
+  background-color: #f5f5f5;
+}
+.list-edit form .fold {
+  display: inline-block;
+  width: 2rem;
+  height: 1.2rem;
+  margin-left: 6.5rem;
+  margin-right: 6.5rem;
+  text-align: center;
+  line-height: 1.2rem;
+  background-color: #00abf1;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+  border-bottom-left-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+.list-edit form .fold i {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+}
+.list-info {
+  position: absolute;
+  width: 100%;
+  top: 13rem;
+  overflow-y: scroll;
+  border-top: 1px solid #e8e8e8;
+}
+.list-info .listInfo {
+  background: #fafafa;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+  height: 3rem;
+}
+.list-info .listInfo .left {
+  width: 13rem;
+  margin-top: 0.2rem;
+  font-size: 0.3rem;
+  float: left;
+  color: #7c7c7c;
+}
+.list-info .listInfo .left .area {
+  height: 1rem;
+}
+.list-info .listInfo .left p {
+  width: 100%;
+  height: 0.8rem;
+}
+.list-info .listInfo .left strong {
+  font-weight: normal;
+  font-size: 0.4rem;
+  text-align: left;
+}
+.list-info .listInfo .left .queue {
+  margin-left: 0.5rem;
+  margin-top: 0.1rem;
+  margin-right: 0.3rem;
+  display: inline-block;
+  width: 1.2rem;
+  height: 0.8rem;
+  text-align: center;
+  line-height: 0.8rem;
+  border-radius: 0.2rem;
+  background-color: #00abf1;
+  color: #fff;
+  font-size: 0.4rem;
+  font-style: normal;
+}
+.list-info .listInfo .left .name {
+  color: #000;
+  line-height: 1rem;
+}
+.list-info .listInfo .left .tm {
+  display: inline-block;
+  float: left;
+  width: 5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.1rem;
+  line-height: 0.8rem;
+}
+.list-info .listInfo .left .zbm {
+  display: inline-block;
+  float: left;
+  width: 4rem;
+  margin-right: 0.1rem;
+  line-height: 0.8rem;
+}
+.list-info .listInfo .left .ls {
+  display: inline-block;
+  float: left;
+  width: 3rem;
+  line-height: 0.8rem;
+}
+.list-info .listInfo .left .kc {
+  display: inline-block;
+  float: left;
+  width: 2.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.05rem;
+  line-height: 0.8rem;
+}
+.list-info .listInfo .left .num,
+.list-info .listInfo .left .price {
+  display: inline-block;
+  float: left;
+  width: 3rem;
+  margin-right: 0.1rem;
+  line-height: 0.8rem;
+}
+.list-info .listInfo .left .num input,
+.list-info .listInfo .left .price input {
+  display: inline-block;
+  width: 1rem;
+  text-align: center;
+  background: none;
+  font-size: 0.5rem;
+  color: #000;
+}
+.list-info .listInfo .left .money {
+  display: inline-block;
+  float: left;
+  width: 3.5rem;
+  line-height: 0.8rem;
+}
+.list-info .listInfo .left .money input {
+  display: inline-block;
+  width: 1.5rem;
+  text-align: center;
+  background: #fafafa;
+  font-size: 0.5rem;
+  color: #000;
+}
+.list-info .listInfo .right {
+  float: right;
+  width: 2rem;
+  font-size: 0.5rem;
+}
+.list-info .listInfo .right .xz {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+.list-info .listInfo .right .delete {
+  position: absolute;
+  top: 1.8rem;
+  right: 1rem;
+}
+.list-info dl {
+  background: #fafafa;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+.list-info dl dt {
+  line-height: 1.5rem;
+  font-size: 0.5rem;
+}
+.list-info dl dt .queue {
+  display: inline-block;
+  float: left;
+  margin-left: 0.5rem;
+  margin-top: 0.3rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  text-align: center;
+  line-height: 0.8rem;
+  margin-right: 0.2rem;
+  border-radius: 0.2rem;
+  background-color: #00abf1;
+  color: #fff;
+  font-size: 0.4rem;
+  font-style: normal;
+}
+.list-info dl dt .number {
+  display: inline-block;
+  text-align: left;
+  margin-right: 0.2rem;
+}
+.list-info dl dt .name {
+  display: inline-block;
+  text-align: left;
+}
+.list-info dl dt .discount {
+  float: right;
+  margin-right: 1rem;
+}
+.list-info dl dt .fa {
+  float: right;
+  line-height: 1.5rem;
+  margin-right: 1rem;
+}
+.list-info dl dd {
+  float: left;
+  font-size: 0.4rem;
+  width: 3rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  color: #aaa;
+}
+.list-info dl dd span {
+  display: inline-block;
+  color: #000;
+}
+.list-info dl .tm {
+  position: absolute;
+  top: 1.2rem;
+  left: 0.5rem;
+  line-height: 1rem;
+}
+.list-info dl .zbm {
+  position: absolute;
+  top: 1.2rem;
+  left: 3.5rem;
+  line-height: 1rem;
+}
+.list-info dl .ls {
+  position: absolute;
+  top: 1.2rem;
+  left: 9.5rem;
+  line-height: 1rem;
+}
+.list-info dl .kc {
+  position: absolute;
+  top: 2rem;
+  left: 0.5rem;
+  line-height: 1rem;
+}
+.list-info dl .num {
+  position: absolute;
+  top: 2rem;
+  left: 3.5rem;
+  line-height: 1rem;
+}
+.list-info dl .price {
+  position: absolute;
+  top: 2rem;
+  left: 6.5rem;
+  line-height: 1rem;
+}
+.list-info dl .money {
+  position: absolute;
+  top: 2rem;
+  left: 9.5rem;
+  line-height: 1rem;
+}
+.list-info dl .delete {
+  width: 1rem;
+  text-align: right;
+  float: right;
+  margin-right: 1rem;
+}
+.list-info dl:nth-child(2n) {
+  background-color: #f5f5f5;
+}
+.footer {
+  width: 100%;
+  height: 2rem;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+}
+.footer .totalNum {
+  width: 35%;
+  height: 2rem;
+  float: left;
+  line-height: 2rem;
+  font-size: 0.5rem;
+  text-align: left;
+  text-indent: 1em;
+  color: #000;
+}
+.footer .totalNum span {
+  font-size: 0.6rem;
+  color: red;
+}
+.footer .totalMoney {
+  width: 35%;
+  height: 2rem;
+  float: left;
+  line-height: 2rem;
+  font-size: 0.5rem;
+  text-align: left;
+  text-indent: 1em;
+  color: #000;
+}
+.footer .totalMoney span {
+  font-size: 0.6rem;
+  color: red;
+}
+.footer .add {
+  width: 30%;
+  height: 2rem;
+  float: left;
+  border-radius: 0.2rem;
+  background: #00abf1;
+  color: #fff;
+  font-size: 0.6rem;
+  text-align: center;
+  line-height: 2rem;
+  border-radius: 0;
+}
+.footer .add a {
+  color: #fff;
+}
+.footer .add span {
+  margin-right: 0.3rem;
+}
+.type-list {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: none;
+  position: relative;
+  z-index: 5;
+}
+.type-list .add-search {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 2rem;
+  height: 3rem;
+}
+.type-list .add-search .add-type {
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+.type-list .add-search .add-type div {
+  float: left;
+  width: 5rem;
+  font-size: 0.6rem;
+  text-align: center;
+}
+.type-list .add-search input {
+  height: 1.5rem;
+  background-color: #eee;
+  width: 100%;
+  text-indent: 1.5em;
+}
+.type-list .class-list {
+  width: 100%;
+  position: fixed;
+  background: red;
+  top: 5rem;
+  height: calc(95%);
+  overflow-y: scroll;
+  background-color: #fff;
+  padding-top: 0.5rem;
+}
+.type-list .class-list dl {
+  width: 14rem;
+  background-color: #fff;
+  padding-top: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.type-list .class-list dl img {
+  width: 3rem;
+  height: 3rem;
+  float: left;
+  margin-right: 0.5rem;
+  display: none;
+}
+.type-list .class-list dl div {
+  float: left;
+  width: 14rem;
+}
+.type-list .class-list dl div dt {
+  width: 100%;
+  height: 1rem;
+  font-size: 0.6rem;
+  border-bottom: 1px solid #eee;
+}
+.type-list .class-list dl div dt i {
+  display: inline-block;
+  float: left;
+  width: 0.8rem;
+  height: 0.8rem;
+  text-align: center;
+  line-height: 0.8rem;
+  margin-right: 0.2rem;
+  border-radius: 0.2rem;
+  background-color: #00abf1;
+  color: #fff;
+  font-size: 0.4rem;
+  font-style: normal;
+}
+.type-list .class-list dl div dt strong {
+  float: left;
+}
+.type-list .class-list dl div dt span {
+  float: right;
+  width: 1rem;
+  text-align: center;
+  line-height: 1rem;
+}
+.type-list .class-list dl div dd {
+  width: 45%;
+  float: left;
+  font-size: 0.5rem;
+  line-height: 1rem;
+}
+.type-list .class-list dl div dd:nth-child(2n-1) {
+  margin-left: 0.5rem;
+}
+.type-list .class-list .target-type {
+  background: #00abf1;
+  color: #fff;
+}
+.type-list .wrap {
+  position: fixed;
+  top: 5rem;
+  height: calc(95%);
+  background-color: #fff;
+  overflow-y: scroll;
+}
+.type-list .goods-list {
+  display: none;
+  padding-top: 0.5rem;
+  background-color: #fff;
+}
+.type-list .goods-list dl {
+  background-color: #fff;
+  padding-top: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.type-list .goods-list dl img {
+  width: 3rem;
+  height: 3rem;
+  float: left;
+  margin-right: 0.5rem;
+  display: none;
+}
+.type-list .goods-list dl div {
+  float: left;
+  width: 14rem;
+}
+.type-list .goods-list dl div dt {
+  width: 100%;
+  height: 1rem;
+  font-size: 0.6rem;
+  border-bottom: 1px solid #eee;
+}
+.type-list .goods-list dl div dt i {
+  display: inline-block;
+  float: left;
+  width: 0.8rem;
+  height: 0.8rem;
+  text-align: center;
+  line-height: 0.8rem;
+  margin-right: 0.2rem;
+  border-radius: 0.2rem;
+  background-color: #00abf1;
+  color: #fff;
+  font-size: 0.4rem;
+  font-style: normal;
+}
+.type-list .goods-list dl div dt strong {
+  float: left;
+}
+.type-list .goods-list dl div dt span {
+  float: right;
+  width: 1rem;
+  text-align: center;
+  line-height: 1rem;
+}
+.type-list .goods-list dl div dd {
+  width: 45%;
+  float: left;
+  font-size: 0.5rem;
+  line-height: 1rem;
+}
+.type-list .goods-list dl div dd:nth-child(2n-1) {
+  margin-left: 0.5rem;
+}
+.goods-info {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  display: none;
+}
+.goods-info .goods-form {
+  width: 100%;
+  position: fixed;
+  top: 2rem;
+  bottom: 2rem;
+  height: calc(96%);
+  overflow-y: scroll;
+}
+.goods-info .goods-form .goods form .goods-head {
+  width: 100%;
+  background-color: #fafafa;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 0.2rem;
+}
+.goods-info .goods-form .goods form .goods-head img {
+  width: 2rem;
+  height: 2rem;
+  float: left;
+  margin-right: 0.5rem;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+.goods-info .goods-form .goods form .goods-head div {
+  float: left;
+  width: 10rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.goods-info .goods-form .goods form .goods-head div p {
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 0.5rem;
+  border: none;
+  margin-bottom: 0;
+}
+.goods-info .goods-form .goods form .head-body div {
+  width: 100%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  position: relative;
+  background: #fafafa;
+  border-bottom: 1px solid #e8e8e8;
+}
+.goods-info .goods-form .goods form .head-body div p {
+  width: 50%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  float: left;
+  background: #fafafa;
+  position: relative;
+}
+.goods-info .goods-form .goods form .head-body div p label {
+  float: left;
+  font-size: 0.5rem;
+  width: 3rem;
+  text-align: center;
+  color: #7c7c7c;
+}
+.goods-info .goods-form .goods form .head-body div p input {
+  float: left;
+  width: 4rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  border-radius: 0.5rem;
+  background: none;
+  color: #000!important;
+}
+.goods-info .goods-form .goods form .head-body div p select {
+  border: none;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  width: 7rem;
+}
+.goods-info .goods-form .goods form .head-body div p span {
+  font-size: 0.5rem;
+  display: inline-block;
+  width: 2rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
+  float: left;
+}
+.goods-info .goods-form .goods form .head-body div p .nowUnit {
+  background-color: #00abf1;
+  color: #fff;
+  border-radius: 0.2rem;
+}
+.goods-info .goods-form .goods-btn {
+  position: fixed;
+  top: 3.5rem;
+  left: 0;
+  font-size: 1rem;
+  width: 100%;
+  color: #00abf1;
+}
+.goods-info .goods-form .goods-btn .preGoods {
+  float: left;
+  margin-left: 0.5rem;
+  display: none;
+}
+.goods-info .goods-form .goods-btn .nextGoods {
+  float: right;
+  margin-right: 0.5rem;
+  display: none;
+}
+.goods-info .saveGoods {
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  position: absolute;
+  bottom: 0;
+  background-color: #00abf1;
+  color: #fff;
+  font-size: 0.7rem;
+}
+.__layer-ball {
+  position: fixed;
+  line-height: 0.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 0.4rem 0.4rem 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.5rem;
+  z-index: 1001;
+  background-color: red;
+  background-clip: padding-box;
+  text-decoration: none;
+  top: 1em;
+  left: 0;
+  box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.05);
+}
+.list-btn {
+  position: absolute;
+  top: 12rem;
+  right: 0;
+  z-index: 1;
+}
+.list-btn span {
+  display: inline-block;
+  float: left;
+  font-size: 0.5rem;
+  margin-right: 0.6rem;
+  line-height: 1rem;
+  color: #00abf1;
+}
+.list-btn span i {
+  margin-left: 0.1rem;
+}
+.gysList {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  display: none;
+}
+.gysList .search-gys {
+  position: fixed;
+  top: 2rem;
+  width: 100%;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  border-bottom: 0.05rem solid #eee;
+}
+.gysList .search-gys input {
+  float: left;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-indent: 1rem;
+  width: 13.5rem;
+}
+.gysList .search-gys button {
+  float: right;
+  font-size: 0.6rem;
+  background-color: #00abf1;
+  color: #fff;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+.gysList .serach-list {
+  position: fixed;
+  top: 3.5rem;
+  width: 100%;
+  height: calc(96.5%);
+  overflow-y: scroll;
+}
+.gysList .serach-list .gys {
+  height: 2.6rem;
+  padding: 0.2rem 0.5rem;
+  border-bottom: 0.05rem dashed #eee;
+}
+.gysList .serach-list .gys p {
+  font-size: 0.4rem;
+  color: #aaa;
+  height: 0.8rem;
+  line-height: 0.8rem;
+}
+.gysList .serach-list .gys p span strong {
+  font-weight: normal;
+  color: #000;
+}
+.gysList .serach-list .gys p span i {
+  font-style: normal;
+}
+.gysList .serach-list .gys .title {
+  color: #000;
+  height: 1rem;
+  line-height: 1rem;
+}
+.gysList .serach-list ul {
+  height: 3.2rem;
+  padding: 0.2rem 0;
+  border-bottom: 0.05rem dashed #eee;
+}
+.gysList .serach-list ul li {
+  width: 50%;
+  text-align: left;
+  font-size: 0.4rem;
+  float: left;
+  color: #aaa;
+  line-height: 0.8rem;
+}
+.gysList .serach-list ul li:nth-child(2n-1) {
+  text-indent: 1rem;
+}
+.gysList .serach-list ul li:nth-child(1) {
+  color: #000;
+  font-size: 0.5rem;
+}
+.gysList .serach-list ul li:nth-child(2) {
+  color: #000;
+  font-size: 0.5rem;
+}
+/*# sourceMappingURL=list.css.map */

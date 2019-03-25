@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>关注</title>
+	<script>
+		// rem适配
+		(function(){
+			var html = document.documentElement;
+			var hWidth = html.getBoundingClientRect().width;
+			html.style.fontSize = hWidth/15 + 'px';
+		})()
+	</script>
+	<link rel="shortcut icon" href="#" />
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/name.js"></script>
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript">	
+	$(function(){
+		var mobile = 18186106240;
+		var tzm = 222;
+		var gzmobile = 18971249467;
+		ajax('get',' http://lyl.hcpos.com/freedom/lelcom.ashx?oper=8&mobile='+mobile+'&tzm='+tzm+'&gzmobile='+gzmobile,'',function(data) {
+			var data = JSON.parse( data );
+			var oUl = document.getElementById('mdSelect');
+			if (data.success=='true') {
+				$('.attentionInfo').text(data.errorMessage);
+				$('.ok').attr('href','index.html')
+			}else{
+				$('.attentionInfo').text(data.errorMessage);
+				$('.ok').attr('href','index.html');
+			}
+		});
+
+
+	    // var str = "select * from t_pm_sheet_detail where sheet_no='"+sheet_no+"' ";
+	// 	var url = 'http://lyl.hcpos.com/freedom/attention.html?gzmobile=18186106240&tzm='+tzm;
+	// 	$.ajax({
+	// 		url : url,
+	//         type : "post",
+	//         data : JSON.stringify({    
+	//             'comsql':'',
+	// 			'headsql':'',
+	// 			'detailsql':''
+	// 	    }),
+	//         async : false,
+	//         success : function(data) {  
+	//         alert(1)     
+	// 			alert(data) 
+	//         }
+	//     });
+	})		
+	</script>
+	<style>
+		body{
+			background: rgba(0,0,0,0.3);
+			font-size: 1rem;
+			text-align: center;
+		}
+		.attentionWrap{
+			width: 14rem;
+			height: 5rem;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: calc(100% - 6rem);
+			background: #fff;
+			border-radius: 0.2rem;
+		}
+		.attentionInfo{
+			width: 100%;
+			line-height: 1rem;
+			padding: 1.5rem 0 0;
+			display: block;
+			color: #000;
+			font-size: 0.5rem;
+		}
+		.ok{
+			font-size: 0.5rem;
+			color: #fff;
+			background-color: #00abf1;
+			display: block;
+			width: 3rem;
+			height: 1rem;
+			text-align: center;
+			line-height: 1rem;
+			margin: 0 auto;
+			border-radius: 0.2rem;
+			margin-top: 0.5rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="attentionWrap">
+		<a href="" class="attentionInfo"></a>	
+		<a href="" class="ok">返回</a>		
+	</div>
+</body>
+</html>
